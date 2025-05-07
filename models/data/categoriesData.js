@@ -4,7 +4,7 @@ import Category from '../Category.js'
 
 let categories = [
     {
-        name: "Shōnen",
+        name: "Shoen",
         color: "#EF8481",
         hover: "#FFE0DF",
     },
@@ -14,7 +14,7 @@ let categories = [
         hover: "#FFDFC8",
     },
     {
-        name: "Shōjo",
+        name: "Shojo",
         color: "#00BA88",
         hover: "#D1FBF0",
     },
