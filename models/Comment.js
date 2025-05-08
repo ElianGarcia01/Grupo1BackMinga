@@ -8,6 +8,7 @@ let schema = Schema({
     message: { type: String, required: true}
 })
 
+
 let Comment = model(collection, schema)
 
 export default Comment
