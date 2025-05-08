@@ -17,6 +17,6 @@ routerIndex.use('/categories', categoriesRouter)
 routerIndex.use('/mangas', mangasRouter)
 routerIndex.use('/chapters', chaptersRouter)
 routerIndex.use('/comments', commentsRouter)
-routerIndex.use('reactions', reactionsRouter)
+routerIndex.use('/reactions', reactionsRouter)
 
 export default routerIndex;
