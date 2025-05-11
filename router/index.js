@@ -7,6 +7,7 @@ import categoriesRouter from "./categoriesRouter.js";
 import chaptersRouter from "./chaptersRouter.js";
 import commentsRouter from "./commentsRouter.js";
 import reactionsRouter from "./reactionsRouter.js";
+import authRouter from "./authRouter.js";
 
 const routerIndex = Router()
 
@@ -18,5 +19,6 @@ routerIndex.use('/mangas', mangasRouter)
 routerIndex.use('/chapters', chaptersRouter)
 routerIndex.use('/comments', commentsRouter)
 routerIndex.use('/reactions', reactionsRouter)
+routerIndex.use('/auth', authRouter)
 
 export default routerIndex;

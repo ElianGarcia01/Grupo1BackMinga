@@ -715,6 +715,6 @@ let insert_mangas = async()=> {
         }
         console.log(one.title+' & chapters created!')
     }
-    console.log('done!')
+    process.exit(0)
 }
 insert_mangas()
