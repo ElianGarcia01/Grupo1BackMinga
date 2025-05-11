@@ -13,6 +13,10 @@ let register = async (req, res, next) => {
             });
         }
         const createAuthor = await Author.create(authorInfo);
+
+        //actualiza el rol de usuario al registrarse como autor
+        await User.findByIdAndUpdate(createAuthor.user_id, {role : 1})
+
         return res.status(201).json({
             response: createAuthor
         });
