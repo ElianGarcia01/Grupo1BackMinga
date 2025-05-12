@@ -5,7 +5,7 @@ let deleteCategory = async (req,res,next) => {
         let categoryInfo = req.body
         console.log(categoryInfo)
         let deleteCategory = await Category.deleteOne(
-            {name : categoryInfo.name}
+            {_id : categoryInfo._id}
         )
         return res.status(200).json({
             response: deleteCategory

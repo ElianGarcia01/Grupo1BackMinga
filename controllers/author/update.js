@@ -6,7 +6,7 @@ let update = async (req,res,next) => {
         console.log(authInfo)
 
         let updateAuth = await Author.updateOne(
-            {name : authInfo.name},
+            {_id : authInfo._id},
             {photo: authInfo.photo}
         )
         return res.status(200).json({

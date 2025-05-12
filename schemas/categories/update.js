@@ -1,6 +1,10 @@
 import joi from "joi-oid";
 
 const schema = joi.object({
+    _id: joi.objectId().messages({
+        'string.pattern.name': 'Category ID must be a valid ObjectId'
+    }),
+    
     name: joi.string().min(2).max(50).messages({
         'string.base': 'Name must be a string',
         'string.min': 'Name must have at least 2 characters',

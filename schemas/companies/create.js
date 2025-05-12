@@ -8,7 +8,7 @@ const schema = joi.object({
 
     website: joi.string().uri().optional().messages({
         'string.base': 'Website must be a string (URL)',
-        'string.uri': 'You must provide a valid website URL',
+        'string.uri': 'You must provide a valid website URL (example: "https://www...")',
     }),
 
     description: joi.string().min(10).max(500).required().messages({

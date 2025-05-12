@@ -11,7 +11,7 @@ const categoriesRouter = Router()
 
 categoriesRouter.get('/allCategories', allCategories)
 categoriesRouter.post('/create',validator(schemaCreateCat), create)
-categoriesRouter.post('/update',validator(schemaUpdateCat), update)
+categoriesRouter.put('/update',validator(schemaUpdateCat), update)
 categoriesRouter.delete('/delete', deleteCategory)
 
 export default categoriesRouter

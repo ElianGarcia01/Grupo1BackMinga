@@ -12,7 +12,7 @@ let chaptersRouter = Router()
 
 chaptersRouter.get('/allChapters', allChapters)
 chaptersRouter.post('/register',validator(schemaCreateChap), register)
-chaptersRouter.post('/update',validator(schemaUpdateChap), update)
+chaptersRouter.put('/update',validator(schemaUpdateChap), update)
 chaptersRouter.delete('/delete', deleteChapter)
 
 export default chaptersRouter

@@ -1,18 +1,30 @@
 import Company from "../../models/Company.js";
+import User from "../../models/User.js";
 
-let deleteCompany = async (req,res,next) => {
+let deleteCompany = async (req, res, next) => {
     try {
-        let companyInfo = req.body
-        console.log(companyInfo)
-        let deleteCompany = await Company.deleteOne(
-            {name : companyInfo.name}
-        )
-        return res.status(200).json({
-            response: deleteCompany
-        })   
-    } catch (error) {
-      next(error)  
-    }
-}
+        const companyId = req.params.id;
 
-export default deleteCompany
+        const company = await Company.findById(companyId);
+        if (!company) {
+            return res.status(404).json({
+                success: false,
+                message: "Company not found",
+            });
+        }
+
+        await Company.findByIdAndDelete(companyId);
+
+        await User.findByIdAndUpdate(company.user_id, { role: 0 });
+
+        return res.status(200).json({
+            success: true,
+            message: "Company deleted and user role updated to reader (0)",
+        });
+
+    } catch (error) {
+        next(error);
+    }
+};
+
+export default deleteCompany;
