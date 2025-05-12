@@ -13,7 +13,10 @@
     "dataCategories": "node ./models/data/categoriesData.js",
     "dataMangas": " node ./models/data/mangasData.js",
     "dataChapters": "node ./models/data/chaptersData.js",
-    "dataMangasChapters" : "node ./models/data/mangasWhitChapters.js"
+    "dataMangasChapters" : "node ./models/data/mangasWhitChapters.js",
+    "dataCompanies" : "node ./models/data/companiesData.js",
+    "dataComments" : "node ./models/data/commentsData.js",
+    "dataReactions" : "node ./models/data/reactionsData.js"
   },
   "repository": {
     "type": "git",
