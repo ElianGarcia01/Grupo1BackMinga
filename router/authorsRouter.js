@@ -11,7 +11,7 @@ const authorsRouter = Router()
 
 authorsRouter.get('/allAuthors', allAuthors)
 authorsRouter.post('/register',validator(schemaRegisterAuthor), register)
-authorsRouter.post('/update',validator(schemaUpdateAuthor), update)
-authorsRouter.delete('/delete', deleteAuthor)
+authorsRouter.put('/update',validator(schemaUpdateAuthor), update)
+authorsRouter.delete('/delete/:id', deleteAuthor)
 
 export default authorsRouter

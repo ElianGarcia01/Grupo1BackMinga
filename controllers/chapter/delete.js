@@ -5,7 +5,7 @@ let deleteChapter = async (req,res,next) => {
         let chapterInfo = req.body
         console.log(chapterInfo)
         let deleteChapter = await Chapter.deleteOne(
-            {title : chapterInfo.title}
+            {_id : chapterInfo._id}
         )
         return res.status(200).json({
             response: deleteChapter

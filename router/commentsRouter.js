@@ -11,7 +11,7 @@ let commentsRouter = Router()
 
 commentsRouter.get('/allComments', allComments)
 commentsRouter.post('/create',validator(schemaCreateComment), create)
-commentsRouter.post('/update',validator(schemaUpdateComment), update)
-commentsRouter.delete('/delete', deleteComment)
+commentsRouter.put('/update',validator(schemaUpdateComment), update)
+commentsRouter.delete('/delete/:id', deleteComment)
 
 export default commentsRouter

@@ -11,8 +11,8 @@ const companiesRouter = Router()
 
 companiesRouter.get('/allCompanies', allCompanies)
 companiesRouter.post('/register',validator(schemaRegisterComp), register)
-companiesRouter.post('/update',validator(schemaUpdateComp), update)
-companiesRouter.delete('/delete', deleteCompany)
+companiesRouter.put('/update',validator(schemaUpdateComp), update)
+companiesRouter.delete('/delete/:id', deleteCompany)
 
 export default companiesRouter
 
