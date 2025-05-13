@@ -5,6 +5,7 @@ export default async (req, res, next) => {
         let account = await User.findOne({ email: req.body.email })
         if(account){
             req.user = {
+                id: account._id,
                 email: account.email,
                 password: account.password,
                 photo: account.photo,

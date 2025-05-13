@@ -21,4 +21,17 @@ let allUsers = async (req, res, next) => {
     }
 }
 
-export default allUsers
+const validateToken = async (req, res, next) => {
+    try {
+        return res.status(200).json({
+        response: {
+        email: req.user.email,
+        photo: req.user.photo,
+        role: req.user.role}
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+export { allUsers, validateToken }

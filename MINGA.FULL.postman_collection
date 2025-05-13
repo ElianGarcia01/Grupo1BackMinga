@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ed3f9ed3-7494-4b7f-8e72-c3ed35cf2675",
+		"_postman_id": "72f99706-f70b-4203-86b6-3945db8ee490",
 		"name": "MINGA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42862347"
+		"_exporter_id": "39830214"
 	},
 	"item": [
 		{
@@ -242,7 +242,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/chapters/allChapters",
+							"raw": "http://localhost:8080/api/chapters/allChapters?manga_id=68202703269acd7b3363fb53",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -252,6 +252,12 @@
 								"api",
 								"chapters",
 								"allChapters"
+							],
+							"query": [
+								{
+									"key": "manga_id",
+									"value": "68202703269acd7b3363fb53"
+								}
 							]
 						}
 					},
@@ -730,7 +736,10 @@
 					"name": "allReactions",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -846,7 +855,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"yeisonlopez@gmail.com\",\r\n    \"password\": \"yeison123456\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}",
+							"raw": "{\r\n    \"email\": \"sololector@gmail.com\",\r\n    \"password\": \"Password1234\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -924,6 +933,212 @@
 								"api",
 								"users",
 								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateToken",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGV4YW1wbGUuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vNDUuanBnIiwicm9sZSI6MCwiaWF0IjoxNzQ3MTA5OTMyLCJleHAiOjE3NDcxMjQzMzJ9.djbY5vX5AqcATzBoxLanhFFB1hVQ9X7GwxR2sEwyaK8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sololector@gmail.com\",\r\n    \"password\": \"Password1234\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/validateToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"validateToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signinAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"administrador@gmail.com\",\r\n    \"password\": \"Admin123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signinUserCompany",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"alejandro@example.com\",\r\n    \"password\": \"Password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signinUseAuthor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lucas@example.com\",\r\n    \"password\": \"Password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signinUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sololector@gmail.com\",\r\n    \"password\": \"Password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logOut",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzEwOTg5MywiZXhwIjoxNzQ3MTI0MjkzfQ.givoiMW1ZgCYrkYahKD8a5SL0lwRbnuE7Ps8N0V_U6Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"administrador@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/logOut",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"logOut"
 							]
 						}
 					},

@@ -36,7 +36,7 @@ let authors = [
 let insert_authors = async () => {
     try {
         for(let author of authors){
-            let user = await User.findOne({ email: author.user_id })
+            let user = User.findOneAndUpdate({ email: company.user_id }, { role: 1 })
             author.user_id = await user._id
             let insert = await Author.create(author)
             console.log(insert.name);
