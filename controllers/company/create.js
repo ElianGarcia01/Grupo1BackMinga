@@ -13,6 +13,9 @@ let register = async (req, res, next) => {
             });
         }
         const createCompany = await Company.create(companyInfo);
+
+        await User.findByIdAndUpdate(createCompany.user_id, {role : 2})
+
         return res.status(201).json({
             response: createCompany
         });
