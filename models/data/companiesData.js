@@ -33,7 +33,7 @@ let companies = [
 let insert_companies = async () => {
     try {
         for (let company of companies) {
-            let user = await User.findOne({ email: company.user_id })
+            let user = await User.findOneAndUpdate({ email: company.user_id }, { role: 2 })
             company.user_id = await user._id
             let insert = await Company.create(company)
             console.log(insert.name);
