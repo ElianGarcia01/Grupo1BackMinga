@@ -6,12 +6,15 @@ import deleteAuthor from "../controllers/author/delete.js";
 import validator from "../middlewares/validator.js"
 import schemaRegisterAuthor from "../schemas/authors/create.js"
 import schemaUpdateAuthor from "../schemas/authors/update.js"
+import passport from "../middlewares/passport.js";
+import onlyAdmin from "../middlewares/onlyAdmin.js";
+import authRole from "../middlewares/authRole.js";
 
 const authorsRouter = Router()
 
-authorsRouter.get('/allAuthors', allAuthors)
+authorsRouter.get('/allAuthors', passport.authenticate('jwt', {session: false}), onlyAdmin, allAuthors)
 authorsRouter.post('/register',validator(schemaRegisterAuthor), register)
-authorsRouter.put('/update',validator(schemaUpdateAuthor), update)
-authorsRouter.delete('/delete/:id', deleteAuthor)
+authorsRouter.put('/update',validator(schemaUpdateAuthor), passport.authenticate('jwt', {session: false}), authRole, update)
+authorsRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteAuthor)
 
 export default authorsRouter

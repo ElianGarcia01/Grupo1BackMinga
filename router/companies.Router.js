@@ -6,13 +6,16 @@ import deleteCompany from "../controllers/company/delete.js"
 import validator from "../middlewares/validator.js"
 import schemaRegisterComp from "../schemas/companies/create.js"
 import schemaUpdateComp from "../schemas/companies/update.js"
+import passport from "../middlewares/passport.js"
+import onlyAdmin from "../middlewares/onlyAdmin.js"
+import authRole from "../middlewares/authRole.js"
 
 const companiesRouter = Router()
 
-companiesRouter.get('/allCompanies', allCompanies)
+companiesRouter.get('/allCompanies', passport.authenticate('jwt', {session: false}), onlyAdmin, allCompanies)
 companiesRouter.post('/register',validator(schemaRegisterComp), register)
-companiesRouter.put('/update',validator(schemaUpdateComp), update)
-companiesRouter.delete('/delete/:id', deleteCompany)
+companiesRouter.put('/update',validator(schemaUpdateComp), passport.authenticate('jwt', {session: false}), authRole, update)
+companiesRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteCompany)
 
 export default companiesRouter
 

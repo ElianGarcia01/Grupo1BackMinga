@@ -8,15 +8,16 @@ import createHash from "../middlewares/createHash.js"
 import validator from "../middlewares/validator.js"
 import schemaCreate from "../schemas/users/create.js"
 import passport from "../middlewares/passport.js";
+import onlyAdmin from "../middlewares/onlyAdmin.js"
 
 
 
 const usersRouter = Router()
 
-usersRouter.get("/allUsers", allUsers)
+usersRouter.get("/allUsers", passport.authenticate('jwt', {session: false}), onlyAdmin, allUsers)
 usersRouter.post('/create',validator(schemaCreate), accountExists, createHash, register)
 usersRouter.put('/update', createHash, update)
-usersRouter.delete('/delete', deleteUser)
+usersRouter.delete('/delete', passport.authenticate('jwt', {session: false}), onlyAdmin,deleteUser)
 usersRouter.get('/validateToken', passport.authenticate('jwt', {session: false}), validateToken)
 
 export default usersRouter
