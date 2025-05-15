@@ -19,7 +19,7 @@ const usersRouter = Router()
 usersRouter.get("/allUsers", passport.authenticate('jwt', {session: false}), onlyAdmin, allUsers)
 usersRouter.post('/create',validator(schemaCreate), accountExists, createHash, generateToken, register)
 usersRouter.put('/update', createHash, update)
-usersRouter.delete('/delete', passport.authenticate('jwt', {session: false}), onlyAdmin,deleteUser)
+usersRouter.delete('/delete', passport.authenticate('jwt', {session: false}), onlyAdmin, deleteUser)
 usersRouter.get('/validateToken', passport.authenticate('jwt', {session: false}), validateToken)
 
 export default usersRouter
