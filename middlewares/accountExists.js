@@ -10,6 +10,12 @@ export default async (req, res, next) => {
                 message: "User alredy exists"
             })
         }
+        req.user = {
+        email: req.body.email,
+        password: req.body.password,
+        photo: req.body.photo,
+        role: 0,
+        }
         next()
     } catch (error) {
         next(error)
