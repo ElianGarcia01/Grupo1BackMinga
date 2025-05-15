@@ -7,12 +7,14 @@ export default async (req, res, next) => {
       {online: true}
     )
     return res.status(200).json({
-      token: req.token,
-      user: {
-        email: req.user.email,
-        photo: req.user.photo,
-        role: req.user.role,
-        ...req.roleInfo
+      response: {
+        token: req.token,
+        user: {
+          email: req.user.email,
+          photo: req.user.photo,
+          role: req.user.role,
+          ...req.roleInfo
+        }
       }
 
     })
