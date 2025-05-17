@@ -8,12 +8,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server.js",
     "dev": "nodemon ./server.js",
-    "dataUsers" : "node ./models/data/usersData.js",
+    "dataUsers": "node ./models/data/usersData.js",
     "dataAuthors": "node ./models/data/authorsData.js",
     "dataCategories": "node ./models/data/categoriesData.js",
     "dataMangas": " node ./models/data/mangasData.js",
     "dataChapters": "node ./models/data/chaptersData.js",
-    "dataMangasChapters" : "node ./models/data/mangasWhitChapters.js"
+    "dataMangasChapters": "node ./models/data/mangasWhitChapters.js",
+    "dataCompanies": "node ./models/data/companiesData.js",
+    "dataComments": "node ./models/data/commentsData.js",
+    "dataReactions": "node ./models/data/reactionsData.js",
+    "dataFavorites": "node ./models/data/favoritesData.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "joi": "^17.13.3",
     "joi-oid": "^1.1.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.14.1",
