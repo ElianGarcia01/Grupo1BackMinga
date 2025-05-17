@@ -1,16 +1,14 @@
-import { Schema, model } from "mongoose";
+// models/User.js
+import mongoose from "mongoose";
 
-let collection = 'users'
-let schema = Schema({
-    email: {type: String, required: true},
-    password: {type: String, required: true},
-    photo: {type: String, required: true},
-    role: {type: Number, default: 0},
-    online: {type: Boolean, default: false}
-},{
-    timestamps: true
-})
+const userSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  photo: { type: String },
+  role: { type: Number, default: 0 }, 
+  online: { type: Boolean, default: false },
+  active: { type: Boolean, default: true }, 
+}, { timestamps: true });
 
-let User = model(collection, schema)
-
-export default User 
+const User = mongoose.model("User", userSchema);
+export default User;
