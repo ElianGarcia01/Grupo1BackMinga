@@ -3,6 +3,7 @@ import User from "../../models/User.js";
 
 let register = async (req, res, next) => {
     try {
+
         let companyInfo = req.body
         const user = await User.findById(req.user._id);
         if (!user) {
