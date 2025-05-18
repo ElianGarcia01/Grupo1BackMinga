@@ -1,5 +1,5 @@
 import { Router } from "express";
-import allAuthors from "../controllers/author/read.js";
+import { allAuthors, active } from "../controllers/author/read.js";
 import register from "../controllers/author/create.js";
 import update from "../controllers/author/update.js";
 import deleteAuthor from "../controllers/author/delete.js";
@@ -16,5 +16,6 @@ authorsRouter.get('/allAuthors', passport.authenticate('jwt', {session: false}),
 authorsRouter.post('/register',validator(schemaRegisterAuthor), passport.authenticate('jwt', {session: false}), register)
 authorsRouter.put('/update',validator(schemaUpdateAuthor), passport.authenticate('jwt', {session: false}), authRole, update)
 authorsRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteAuthor)
+authorsRouter.get('/active', passport.authenticate('jwt', {session: false}), onlyAdmin, active )
 
 export default authorsRouter
