@@ -575,6 +575,7 @@
 								{
 									"key": "token",
 									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IzQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzU0MzY3MCwiZXhwIjoxNzQ3NTU4MDcwfQ.0Gg5rKJrpAGAorBQlMmV-d7_5g-7LiEmvEzr7KX3570",
+
 									"type": "string"
 								}
 							]
