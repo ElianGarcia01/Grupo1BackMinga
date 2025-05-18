@@ -5,13 +5,14 @@ let register = async (req, res, next) => {
     try {
         let authorInfo = req.body
 
-        const user = await User.findById(authorInfo.user_id);
+        const user = await User.findById(req.user._id);
         if (!user) {
             return res.status(404).json({
                 success: false,
                 message: "User not found",
             });
         }
+        req.body.user_id = user._id
         const createAuthor = await Author.create(authorInfo);
 
         //actualiza el rol de usuario al registrarse como autor
@@ -22,6 +23,9 @@ let register = async (req, res, next) => {
         });
 
     } catch (error) {
+        console.log(req.user);
+        console.log(error);
+        
         next(error)
     }
 };

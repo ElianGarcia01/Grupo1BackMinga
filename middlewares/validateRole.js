@@ -6,19 +6,25 @@ export default async (req, res, next) => {
         req.roleInfo = {}
         if(req.user.role === 1){
             const author = await Author.findOne({ user_id: req.user.id })
-            console.log(req.user.role);
             if (author.active) 
                 req.roleInfo.author = author
-            else 
-            req.user.role = 0
+            else{
+                return res.status(403).json({
+                    success: false,
+                    message: "Your user account is not active, please contact the page administrator."
+                })
+            }
         }
         else if (req.user.role === 2){
             const company = await Company.findOne({ user_id: req.user.id })
-            console.log(req.user.role);
             if (company.active)
                 req.roleInfo.company = company
-            else 
-            req.user.role = 0
+            else{
+                return res.status(403).json({
+                    success: false,
+                    message: "Your user account is not active, please contact the page administrator."
+                })
+            }
         }
         else if (req.user.role === 3)
             req.roleInfo.admin = "admin"

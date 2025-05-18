@@ -3,7 +3,6 @@ import Reaction from "../../models/Reaction.js";
 let deleteReaction = async (req, res, next) => {
     try {
         let deletedReaction = await Reaction.findByIdAndDelete(req.params.id);
-
         if (deletedReaction) {
             return res.status(200).json({ response: deletedReaction });
         } else {

@@ -1,44 +1,47 @@
 import Reaction from "../../models/Reaction.js";
+import Favorite from "../../models/Favorite.js";
 
 let createOrUpdate = async (req, res, next) => {
     try {
-        let reactionInfo = req.body;
-        console.log(reactionInfo);
+        const { manga_id, reaction } = req.body;
+        const isLike = reaction === "like";
 
-        let query = {
-            manga_id: reactionInfo.manga_id,
-        };
+        const favoriteData = {};
+        if (req.roleInfo.author) favoriteData.author_id = req.roleInfo.author._id;
+        if (req.roleInfo.company) favoriteData.company_id = req.roleInfo.company._id;
+        favoriteData.manga_id = manga_id;
 
-        if (reactionInfo.author_id) {
-            query.author_id = reactionInfo.author_id;
-        } else if (reactionInfo.company_id) {
-            query.company_id = reactionInfo.company_id;
+        const existingReaction = await Reaction.findOne(favoriteData);
+
+        if (existingReaction && existingReaction.reaction === reaction) {
+            await Reaction.findByIdAndDelete(existingReaction._id);
+            if (isLike) await Favorite.deleteOne(favoriteData);
+            return res.status(200).json({ message: "Reaction deleted" });
         }
 
-        let reactionInDb = await Reaction.findOne(query);
-
-        if (reactionInDb) {
-    
-            reactionInDb.reaction = reactionInfo.reaction;
-            await reactionInDb.save();
-
+        if (existingReaction) {
+            await Reaction.updateOne(favoriteData, { reaction });
+            if (isLike) await Favorite.create(favoriteData);
             return res.status(200).json({
-                response: reactionInDb,
-                message: "Reaction updated",
-            });
-        } else {
-      
-            let newReaction = await Reaction.create(reactionInfo);
-
-            return res.status(201).json({
-                response: newReaction,
-                message: "Reaction created",
+                message: isLike
+                    ? "Reaction updated and added to favorites"
+                    : "Reaction updated"
             });
         }
-        
+
+        await Reaction.create({ ...favoriteData, reaction });
+        if (isLike) await Favorite.create(favoriteData);
+        return res.status(201).json({
+            message: isLike
+                ? "Reaction created and added to favorites"
+                : "Reaction created"
+        });
+
     } catch (error) {
+        console.log("Reaction error:", req.body.reaction);
         next(error);
     }
 };
 
 export default createOrUpdate;
+

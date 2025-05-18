@@ -11,7 +11,7 @@ import authRole from "../middlewares/authRole.js"
 
 const mangasRouter = Router()
 
-mangasRouter.get('/allMangas', allManga)
+mangasRouter.get('/allMangas', passport.authenticate('jwt', {session: false}), allManga)
 mangasRouter.post('/create',validator(schemaCreateManga), passport.authenticate('jwt', {session: false}), authRole, createManga)
 mangasRouter.put('/update',validator(schemaUpdateManga), passport.authenticate('jwt', {session: false}), authRole, updateManga)
 mangasRouter.delete('/delete', passport.authenticate('jwt', {session: false}), authRole, deleteManga)
