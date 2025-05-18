@@ -36,11 +36,21 @@
 				{
 					"name": "registerAuthor",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IyQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzUzMDMyNiwiZXhwIjoxNzQ3NTQ0NzI2fQ.Y7-KhQSgZid7eTrZVg_TrbN0nR5EsDXv0jx2RiuiRyg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": \"681bfb86381787b1801c3a27\",\r\n    \"name\": \"sebastian\", \r\n    \"lastName\": \"mayorga\", \r\n    \"city\": \"CDMX\", \r\n    \"country\": \"Mexico\", \r\n    \"date_birth\": \"1996-05-21\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/45.jpg\"\r\n}",
+							"raw": "{\r\n    \"name\": \"solo lector \", \r\n    \"lastName\": \"prueba\", \r\n    \"city\": \"CDMX\", \r\n    \"country\": \"Mexico\", \r\n    \"date_birth\": \"1996-05-21\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/45.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -490,11 +500,21 @@
 				{
 					"name": "registerCompanie",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IyQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzUzMDU2OSwiZXhwIjoxNzQ3NTQ0OTY5fQ.po7t1AMYjRXefrzhdMQCbGux05VZCGLlcS5Dnu7S_40",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": \"68221c8048c55d599ac31b17\",\r\n    \"name\": \"Mayorga Animaciones\", \r\n    \"website\": \"https://www.instagram.com\", \r\n    \"description\": \"lorem lorem\", \r\n    \"photo\": \"https://randomuser.me/api/portraits/men/18.jpg\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Mayorga Animaciones\", \r\n    \"website\": \"https://www.instagram.com\", \r\n    \"description\": \"lorem lorem\", \r\n    \"photo\": \"https://randomuser.me/api/portraits/men/18.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -734,11 +754,38 @@
 			"item": [
 				{
 					"name": "allReactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjEsImlhdCI6MTc0NzQ1MTQ0OCwiZXhwIjoxNzQ3NDY1ODQ4fQ.1zm2l8QbZBhzsGIFXSh23yVLeHCNsdT_m9SzGXgslPE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n\"manga_id\": \"681ada38be312374ee03f111\",\r\n\"company_id\": \"682223cb021b35346d280c5a\",\r\n\"reaction\": \"love\"\r\n}"
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8080/api/reactions/allReactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"reactions",
+								"allReactions"
+							]
 						}
 					},
 					"response": []
@@ -746,11 +793,21 @@
 				{
 					"name": "createOrUpdateReaction",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjEsImlhdCI6MTc0NzQ2NTM5OSwiZXhwIjoxNzQ3NDc5Nzk5fQ.-S5WmgUqwbOAb88Xtq79P-HxvfldHkRv45kpocERem0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{    \r\n\"manga_id\": \"681ada38be312374ee03f111\",\r\n\"company_id\": \"682223cb021b35346d280c5a\",\r\n\"reaction\": \"love\"\r\n}",
+							"raw": "{    \r\n\"manga_id\": \"68202703269acd7b3363fb53\",\r\n\"reaction\": \"dislike\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -855,7 +912,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"sololector@gmail.com\",\r\n    \"password\": \"Password1234\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}",
+							"raw": "{\r\n    \"email\": \"sololector2@gmail.com\",\r\n    \"password\": \"Password1234\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -949,7 +1006,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGV4YW1wbGUuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vNDUuanBnIiwicm9sZSI6MCwiaWF0IjoxNzQ3MTA5OTMyLCJleHAiOjE3NDcxMjQzMzJ9.djbY5vX5AqcATzBoxLanhFFB1hVQ9X7GwxR2sEwyaK8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3JAZ21haWwuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vMTEuanBnIiwicm9sZSI6MCwiaWF0IjoxNzQ3MTk3MDQwLCJleHAiOjE3NDcyMTE0NDB9.QucsBiHZC_4pQRUHtqrz6N0T2gyWRwCqniQR_wzMwfY",
 									"type": "string"
 								}
 							]
@@ -958,7 +1015,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"sololector@gmail.com\",\r\n    \"password\": \"Password1234\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/users/validateToken",
@@ -996,7 +1053,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/auth/signIn",
+							"raw": "http://localhost:8080/api/auth/signin",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1005,7 +1062,7 @@
 							"path": [
 								"api",
 								"auth",
-								"signIn"
+								"signin"
 							]
 						}
 					},
@@ -1048,7 +1105,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"lucas@example.com\",\r\n    \"password\": \"Password1234\"\r\n}",
+							"raw": "{\r\n    \"email\": \"alejandro@example.com\",\r\n    \"password\": \"Password1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1078,7 +1135,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"sololector@gmail.com\",\r\n    \"password\": \"Password1234\"\r\n}",
+							"raw": "{\r\n    \"email\": \"sololector2@gmail.com\",\r\n    \"password\": \"Password1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1112,7 +1169,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzEwOTg5MywiZXhwIjoxNzQ3MTI0MjkzfQ.givoiMW1ZgCYrkYahKD8a5SL0lwRbnuE7Ps8N0V_U6Y",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGV4YW1wbGUuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vNDUuanBnIiwicm9sZSI6MSwiaWF0IjoxNzQ3NDQ5NDQ1LCJleHAiOjE3NDc0NjM4NDV9.aKknEN_gPWLYKin3-YNwW2Mdd6SAZBquGRvVFxu1sOk",
 									"type": "string"
 								}
 							]
@@ -1121,7 +1178,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"administrador@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"email\": \"lucas@example.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1139,6 +1196,169 @@
 								"api",
 								"auth",
 								"logOut"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "favoritesByUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3JAZ21haWwuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vMTEuanBnIiwicm9sZSI6MCwiaWF0IjoxNzQ3MTk3MDQwLCJleHAiOjE3NDcyMTE0NDB9.QucsBiHZC_4pQRUHtqrz6N0T2gyWRwCqniQR_wzMwfY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/favorites/byUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorites",
+								"byUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzE5NDIyNCwiZXhwIjoxNzQ3MjA4NjI0fQ.VwYcGqcrNEffuhii7tkM9O7WUmeHa8FgNC936i2qs-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"manga_id\": \"6820270e269acd7b3363fc47\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/favorites/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorites",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFavorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzE5NDIyNCwiZXhwIjoxNzQ3MjA4NjI0fQ.VwYcGqcrNEffuhii7tkM9O7WUmeHa8FgNC936i2qs-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"manga_id\": \"6820270e269acd7b3363fc47\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/favorites/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorites",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzE5NjEyOCwiZXhwIjoxNzQ3MjEwNTI4fQ.MWsUGwmNgXeVCnVIU7ZihPtuQTIdAuLOuVVsjeduKPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6823fa1931e5600f826aaaa7\",\r\n    \"manga_id\": \"6820270e269acd7b3363fc47\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/favorites/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorites",
+								"update"
 							]
 						}
 					},

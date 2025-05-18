@@ -11,7 +11,7 @@ const schema = joi.object({
         'string.pattern.base': 'Last name must only contain letters and spaces',
     }),
 
-    city: joi.string().pattern(/^[A-Za-z\s]+$/).required().messages({
+    city: joi.string().pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/).required().messages({
         'string.base': 'City must be a string',
         'string.pattern.base': 'City must only contain letters and spaces',
     }),
