@@ -22,6 +22,7 @@ let createOrUpdate = async (req, res, next) => {
         if (existingReaction) {
             await Reaction.updateOne(favoriteData, { reaction });
             if (isLike) await Favorite.create(favoriteData);
+            if (!isLike) await Favorite.deleteOne(favoriteData)
             return res.status(200).json({
                 message: isLike
                     ? "Reaction updated and added to favorites"
@@ -38,7 +39,6 @@ let createOrUpdate = async (req, res, next) => {
         });
 
     } catch (error) {
-        console.log("Reaction error:", req.body.reaction);
         next(error);
     }
 };
