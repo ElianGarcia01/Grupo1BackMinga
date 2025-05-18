@@ -28,5 +28,21 @@ let allManga = async (req, res, next) => {
     }
 }
 
+let mangaByUser = async (req, res, next) => {
+    try {
+        const user = {}
+        if(req.roleInfo.author) user.author_id = req.roleInfo.author._id
+        if(req.roleInfo.company) user.company_id = req.roleInfo.company._id
+        const mangas = await Manga.find(user)
+        res.status(200).json({
+            response: mangas
+        })
+    } catch (error) {
+        console.log(req.roleInfo.author);
+        next(error)
+    }
+
+}
+
 //
-export default allManga
+export { allManga, mangaByUser }

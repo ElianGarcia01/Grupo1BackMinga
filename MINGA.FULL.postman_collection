@@ -13,7 +13,14 @@
 					"name": "allAuthors",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vMTEuanBnIiwicm9sZSI6MywiaWF0IjoxNzQ3NTM4NjgyLCJleHAiOjE3NDc1NTMwODJ9.cOgWJyPXvSMdD8N-kKvw9jpo9g6Pk_9G18HlQyd-73Q",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -34,6 +41,37 @@
 					"response": []
 				},
 				{
+					"name": "active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vMTEuanBnIiwicm9sZSI6MywiaWF0IjoxNzQ3NTM4NjgyLCJleHAiOjE3NDc1NTMwODJ9.cOgWJyPXvSMdD8N-kKvw9jpo9g6Pk_9G18HlQyd-73Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/authors/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authors",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "registerAuthor",
 					"request": {
 						"auth": {
@@ -41,7 +79,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IyQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzUzMDMyNiwiZXhwIjoxNzQ3NTQ0NzI2fQ.Y7-KhQSgZid7eTrZVg_TrbN0nR5EsDXv0jx2RiuiRyg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IzQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzUzNDY5MCwiZXhwIjoxNzQ3NTQ5MDkwfQ.8Yy0e9CnCdVWhK1o0hN3OgrvY-GnMxtJzc1i2gakMbs",
 									"type": "string"
 								}
 							]
@@ -498,6 +536,37 @@
 					"response": []
 				},
 				{
+					"name": "active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluaXN0cmFkb3JAZ21haWwuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vMTEuanBnIiwicm9sZSI6MywiaWF0IjoxNzQ3NTM4NjgyLCJleHAiOjE3NDc1NTMwODJ9.cOgWJyPXvSMdD8N-kKvw9jpo9g6Pk_9G18HlQyd-73Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/companies/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"companies",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "registerCompanie",
 					"request": {
 						"auth": {
@@ -505,7 +574,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IyQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzUzMDU2OSwiZXhwIjoxNzQ3NTQ0OTY5fQ.po7t1AMYjRXefrzhdMQCbGux05VZCGLlcS5Dnu7S_40",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IzQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzU0MzY3MCwiZXhwIjoxNzQ3NTU4MDcwfQ.0Gg5rKJrpAGAorBQlMmV-d7_5g-7LiEmvEzr7KX3570",
 									"type": "string"
 								}
 							]
@@ -514,7 +583,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Mayorga Animaciones\", \r\n    \"website\": \"https://www.instagram.com\", \r\n    \"description\": \"lorem lorem\", \r\n    \"photo\": \"https://randomuser.me/api/portraits/men/18.jpg\"\r\n}",
+							"raw": "{\r\n    \"name\": \"My company the best\", \r\n    \"website\": \"https://www.facebook.com\", \r\n    \"description\": \"lorem lorem\", \r\n    \"photo\": \"https://randomuser.me/api/portraits/men/18.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -597,6 +666,16 @@
 				{
 					"name": "allManga",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -610,6 +689,37 @@
 								"api",
 								"mangas",
 								"allMangas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IzQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzU0NDQzMSwiZXhwIjoxNzQ3NTU4ODMxfQ.l9cIlsE4QFJXEkaWAIrQw8pJO5G6DIOw0ySpRKRUjMI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/mangas/byUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mangas",
+								"byUser"
 							]
 						}
 					},
@@ -763,7 +873,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjEsImlhdCI6MTc0NzQ1MTQ0OCwiZXhwIjoxNzQ3NDY1ODQ4fQ.1zm2l8QbZBhzsGIFXSh23yVLeHCNsdT_m9SzGXgslPE",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IzQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzU0NDQzMSwiZXhwIjoxNzQ3NTU4ODMxfQ.l9cIlsE4QFJXEkaWAIrQw8pJO5G6DIOw0ySpRKRUjMI",
 									"type": "string"
 								}
 							]
@@ -798,7 +908,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZWphbmRyb0BleGFtcGxlLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzIyLmpwZyIsInJvbGUiOjEsImlhdCI6MTc0NzQ2NTM5OSwiZXhwIjoxNzQ3NDc5Nzk5fQ.-S5WmgUqwbOAb88Xtq79P-HxvfldHkRv45kpocERem0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IzQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjIsImlhdCI6MTc0NzU0NDQzMSwiZXhwIjoxNzQ3NTU4ODMxfQ.l9cIlsE4QFJXEkaWAIrQw8pJO5G6DIOw0ySpRKRUjMI",
 									"type": "string"
 								}
 							]
@@ -912,7 +1022,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"sololector2@gmail.com\",\r\n    \"password\": \"Password1234\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}",
+							"raw": "{\r\n    \"email\": \"sololector3@gmail.com\",\r\n    \"password\": \"Password1234\",\r\n    \"photo\": \"https://randomuser.me/api/portraits/men/11.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1006,7 +1116,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3JAZ21haWwuY29tIiwicGhvdG8iOiJodHRwczovL3JhbmRvbXVzZXIubWUvYXBpL3BvcnRyYWl0cy9tZW4vMTEuanBnIiwicm9sZSI6MCwiaWF0IjoxNzQ3MTk3MDQwLCJleHAiOjE3NDcyMTE0NDB9.QucsBiHZC_4pQRUHtqrz6N0T2gyWRwCqniQR_wzMwfY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbG9sZWN0b3IyQGdtYWlsLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yYW5kb211c2VyLm1lL2FwaS9wb3J0cmFpdHMvbWVuLzExLmpwZyIsInJvbGUiOjAsImlhdCI6MTc0NzUzMDU2OSwiZXhwIjoxNzQ3NTQ0OTY5fQ.po7t1AMYjRXefrzhdMQCbGux05VZCGLlcS5Dnu7S_40",
 									"type": "string"
 								}
 							]
@@ -1135,7 +1245,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"sololector2@gmail.com\",\r\n    \"password\": \"Password1234\"\r\n}",
+							"raw": "{\r\n    \"email\": \"sololector3@gmail.com\",\r\n    \"password\": \"Password1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
