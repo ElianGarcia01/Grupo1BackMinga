@@ -13,7 +13,7 @@ import authRole from "../middlewares/authRole.js";
 const authorsRouter = Router()
 
 authorsRouter.get('/allAuthors', passport.authenticate('jwt', {session: false}), onlyAdmin, allAuthors)
-authorsRouter.post('/register',validator(schemaRegisterAuthor), register)
+authorsRouter.post('/register',validator(schemaRegisterAuthor), passport.authenticate('jwt', {session: false}), register)
 authorsRouter.put('/update',validator(schemaUpdateAuthor), passport.authenticate('jwt', {session: false}), authRole, update)
 authorsRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteAuthor)
 

@@ -13,7 +13,7 @@ import authRole from "../middlewares/authRole.js"
 const companiesRouter = Router()
 
 companiesRouter.get('/allCompanies', passport.authenticate('jwt', {session: false}), onlyAdmin, allCompanies)
-companiesRouter.post('/register',validator(schemaRegisterComp), register)
+companiesRouter.post('/register',validator(schemaRegisterComp), passport.authenticate('jwt', {session: false}), register)
 companiesRouter.put('/update',validator(schemaUpdateComp), passport.authenticate('jwt', {session: false}), authRole, update)
 companiesRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteCompany)
 

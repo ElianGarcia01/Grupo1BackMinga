@@ -9,7 +9,7 @@ let schema = Schema({
     date_birth: {type: Date, required: false},
     photo: {type: String, required: true},
     user_id: {type:Schema.Types.ObjectId, ref:'users', required: true},
-    active: {type: Boolean, default: false }
+    active: {type: Boolean, default: true }
 },{
     timestamps: true
 })
