@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 let collection = 'mangas'
 let schema = Schema({
-    author_id: {type:Schema.Types.ObjectId, ref:'authors', required: true},
+    author_id: {type:Schema.Types.ObjectId, ref:'authors', required: false},
     company_id: {type:Schema.Types.ObjectId, ref:'companies', required: false},
     title: {type: String, required: true},
     cover_photo: {type: String, required: true},
