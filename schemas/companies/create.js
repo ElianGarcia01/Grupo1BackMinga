@@ -1,7 +1,7 @@
 import joi from "joi-oid"
 
 const schema = joi.object({
-    name: joi.string().pattern(/^[A-Za-z\s]+$/).required().messages({
+    name: joi.string().pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/).required().messages({
         'string.base': 'Name must be a string',
         'string.pattern.base': 'Name must only contain letters and spaces',
     }),

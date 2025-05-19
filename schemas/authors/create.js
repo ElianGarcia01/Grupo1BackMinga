@@ -1,12 +1,12 @@
 import joi from "joi-oid"
 
 const schema = joi.object({
-    name: joi.string().pattern(/^[A-Za-z\s]+$/).required().messages({
+    name: joi.string().pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/).required().messages({
         'string.base': 'Name must be a string',
         'string.pattern.base': 'Name must only contain letters and spaces',
     }),
 
-    lastName: joi.string().pattern(/^[A-Za-z\s]+$/).required().messages({
+    lastName: joi.string().pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/).required().messages({
         'string.base': 'Last name must be a string',
         'string.pattern.base': 'Last name must only contain letters and spaces',
     }),
@@ -16,7 +16,7 @@ const schema = joi.object({
         'string.pattern.base': 'City must only contain letters and spaces',
     }),
 
-    country: joi.string().pattern(/^[A-Za-z\s]+$/).required().messages({
+    country: joi.string().pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/).required().messages({
         'string.base': 'Country must be a string',
         'string.pattern.base': 'Country must only contain letters and spaces',
     }),
