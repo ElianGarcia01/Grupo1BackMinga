@@ -1,5 +1,5 @@
 import { Router } from "express";
-import allReactions from "../controllers/reaction/read.js";
+import {allReactions, ByUserAndManga} from "../controllers/reaction/read.js";
 import createOrUpdate from "../controllers/reaction/createOrUpdate.js";
 import deleteReaction from "../controllers/reaction/delete.js";
 import validator from "../middlewares/validator.js";
@@ -11,6 +11,7 @@ import validateRole from "../middlewares/validateRole.js";
 let reactionsRouter = Router()
 
 reactionsRouter.get('/allReactions', passport.authenticate('jwt', {session: false}), allReactions)
+reactionsRouter.get('/byManga', passport.authenticate('jwt', {session: false}), authRole, validateRole, ByUserAndManga)
 reactionsRouter.post('/reaction', validator(schemaCreateReac), passport.authenticate('jwt', {session: false}), authRole, validateRole, createOrUpdate)
 reactionsRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteReaction)
 
