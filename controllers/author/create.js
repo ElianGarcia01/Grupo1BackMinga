@@ -1,5 +1,6 @@
 import Author from "../../models/Author.js";
 import User from "../../models/User.js";
+import jwt from 'jsonwebtoken'
 
 let register = async (req, res, next) => {
     try {
@@ -19,8 +20,17 @@ let register = async (req, res, next) => {
         req.body.user_id = req.user._id;
         const createAuthor = await Author.create(req.body);
         user = await User.findByIdAndUpdate(createAuthor.user_id, { role: 1 });
+        const token = jwt.sign({
+            email: user.email,
+            photo: user.photo,
+            role: user.role
+            },
+            process.env.ENCRYPTION,
+            {expiresIn: "4h"}
+            )
         return res.status(201).json({
-            response: createAuthor,
+            token: token,
+            response: createAuthor
         });
     } catch (error) {
         next(error);

@@ -1,5 +1,6 @@
 import Company from "../../models/Company.js";
 import User from "../../models/User.js";
+import jwt from 'jsonwebtoken'
 
 let register = async (req, res, next) => {
     try {
@@ -20,7 +21,16 @@ let register = async (req, res, next) => {
         req.body.user_id = req.user._id
         const createCompany = await Company.create(req.body);
         user = await User.findByIdAndUpdate(createCompany.user_id, {role : 2})
+        const token = jwt.sign({
+                email: user.email,
+                photo: user.photo,
+                role: user.role
+            },
+            process.env.ENCRYPTION,
+            {expiresIn: "4h"}
+            )
         return res.status(201).json({
+            token: token,
             response: createCompany
         });
     } catch (error) {
