@@ -34,6 +34,9 @@ let mangaByUser = async (req, res, next) => {
         if(req.roleInfo.author) user.author_id = req.roleInfo.author._id
         if(req.roleInfo.company) user.company_id = req.roleInfo.company._id
         const mangas = await Manga.find(user)
+        .populate('author_id')
+        .populate('company_id')
+        .populate('category_id')
         res.status(200).json({
             response: mangas
         })

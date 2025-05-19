@@ -9,7 +9,7 @@ import validateRole from "../middlewares/validateRole.js";
 
 const favoritesRouter = Router()
 
-favoritesRouter.get('/byUser', passport.authenticate('jwt', {session: false}), authRole, byUser)
+favoritesRouter.get('/byUser', passport.authenticate('jwt', {session: false}), authRole, validateRole, byUser)
 favoritesRouter.post('/create', passport.authenticate('jwt', {session: false}), authRole, createFavorite)
 favoritesRouter.delete('/delete', passport.authenticate('jwt', {session: false}), authRole, validateRole, deleteFavorite)
 favoritesRouter.put('/update', passport.authenticate('jwt', {session: false}), authRole, updateFavorite)
