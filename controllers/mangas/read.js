@@ -36,7 +36,7 @@ let mangaByUser = async (req, res, next) => {
         const mangas = await Manga.find(user)
         .populate('author_id')
         .populate('company_id')
-        .populate('category_id')
+        .populate('category_id')       
         res.status(200).json({
             response: mangas
         })
