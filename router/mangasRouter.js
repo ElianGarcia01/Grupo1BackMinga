@@ -13,7 +13,7 @@ import validateRole from "../middlewares/validateRole.js"
 const mangasRouter = Router()
 
 mangasRouter.get('/allMangas', passport.authenticate('jwt', {session: false}), allManga)
-mangasRouter.post('/create',validator(schemaCreateManga), passport.authenticate('jwt', {session: false}), authRole, createManga)
+mangasRouter.post('/create',validator(schemaCreateManga), passport.authenticate('jwt', {session: false}), validateRole, authRole, createManga)
 mangasRouter.put('/update',validator(schemaUpdateManga), passport.authenticate('jwt', {session: false}), authRole, updateManga)
 mangasRouter.delete('/delete', passport.authenticate('jwt', {session: false}), authRole, deleteManga)
 mangasRouter.get('/byUser', passport.authenticate('jwt', {session: false}), validateRole, authRole, mangaByUser )
