@@ -21,3 +21,5 @@ companiesRouter.put("/updateActive", passport.authenticate('jwt', {session: fals
 
 export default companiesRouter
 
+
+
