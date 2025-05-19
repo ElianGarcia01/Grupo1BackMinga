@@ -9,6 +9,7 @@ import commentsRouter from "./commentsRouter.js";
 import reactionsRouter from "./reactionsRouter.js";
 import authRouter from "./authRouter.js";
 import favoritesRouter from "./favoritesRouter.js";
+import rankingRouter from "./rankingRouter.js";
 
 const routerIndex = Router()
 
@@ -22,5 +23,6 @@ routerIndex.use('/comments', commentsRouter)
 routerIndex.use('/reactions', reactionsRouter)
 routerIndex.use('/auth', authRouter)
 routerIndex.use('/favorites', favoritesRouter)
+routerIndex.use('/ranking', rankingRouter)
 
 export default routerIndex;
