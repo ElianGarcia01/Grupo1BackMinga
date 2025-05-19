@@ -1,7 +1,7 @@
 import { Router } from "express"
 import {allCompanies, active} from "../controllers/company/read.js"
 import register from "../controllers/company/create.js"
-import update from "../controllers/company/update.js"
+import {update, updateActive} from "../controllers/company/update.js"
 import deleteCompany from "../controllers/company/delete.js"
 import validator from "../middlewares/validator.js"
 import schemaRegisterComp from "../schemas/companies/create.js"
@@ -17,6 +17,7 @@ companiesRouter.post('/register',validator(schemaRegisterComp), passport.authent
 companiesRouter.put('/update',validator(schemaUpdateComp), passport.authenticate('jwt', {session: false}), authRole, update)
 companiesRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteCompany)
 companiesRouter.get('/active', passport.authenticate('jwt', {session: false}), onlyAdmin, active)
+companiesRouter.put("/updateActive", passport.authenticate('jwt', {session: false}), onlyAdmin, updateActive)
 
 export default companiesRouter
 

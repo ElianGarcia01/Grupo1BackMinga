@@ -23,9 +23,11 @@ let active = async (req, res, next) => {
             .populate('user_id', 'email')
             .exec();
         let response = companies.map(company => ({
-            company: company.name,           
-            email: company.user_id?.email,  
-            active: company.active          
+            id: company._id,
+            name: company.name,           
+            url: company.website,  
+            active: company.active,
+            photo: company.photo          
         }));
 
         return res.status(200).json({ response });
