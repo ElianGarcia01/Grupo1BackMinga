@@ -27,9 +27,11 @@ let active = async (req, res, next) => {
             .populate('user_id', 'email')
             .exec();
         let response = authrs.map(author => ({
-            author: author.name,           
-            email: author.user_id?.email,  
-            active: author.active          
+            id: author._id,
+            name: author.name + " " + author.lastName,           
+            url: author.user_id?.email,  
+            active: author.active,
+            photo: author.photo          
         }));
 
         return res.status(200).json({ response });
