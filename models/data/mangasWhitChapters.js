@@ -4,6 +4,7 @@ import Manga from '../Manga.js'
 import Chapter from '../Chapter.js'
 import Category from '../Category.js'
 import Author from '../Author.js'
+import Company from '../Company.js'
 
 let mangas = [
     {
@@ -1424,8 +1425,13 @@ let mangas = [
 
 let insert_mangas = async()=> {
     for (let manga of mangas) {
-        let author = await Author.findOne({ name: manga.author_id })
-        manga.author_id = await author._id
+        if(manga.author_id){
+            let author = await Author.findOne({ name: manga.author_id })
+            manga.author_id = await author._id
+        }else{
+            let company = await Company.findOne({ name: manga.company_id })
+            manga.company_id = await company._id
+        }
         let category = await Category.findOne({ name: manga.category_id })
         manga.category_id = await category._id
         let one = await Manga.create(manga)
