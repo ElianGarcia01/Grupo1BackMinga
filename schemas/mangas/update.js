@@ -2,11 +2,8 @@ import joi from "joi-oid";
 
 const schema = joi.object({
     _id: joi.objectId().required().messages({
-        'string.pattern.name': '_id ID must be a valid ObjectId',
-    }),
-
-    author_id: joi.objectId().messages({
-        'string.pattern.name': 'author_id ID must be a valid ObjectId',
+        'string.pattern.name': '_id must be a valid ObjectId',
+        'any.required': '_id is required',
     }),
 
     title: joi.string().min(3).max(100).messages({
