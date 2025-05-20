@@ -14,7 +14,7 @@ const authorsRouter = Router()
 
 authorsRouter.get('/allAuthors', passport.authenticate('jwt', {session: false}), onlyAdmin, allAuthors)
 authorsRouter.post('/register',validator(schemaRegisterAuthor), passport.authenticate('jwt', {session: false}), register)
-authorsRouter.put('/update',validator(schemaUpdateAuthor), passport.authenticate('jwt', {session: false}), authRole, update)
+authorsRouter.put('/update', passport.authenticate('jwt', {session: false}), authRole, update)
 authorsRouter.delete('/delete/:id', passport.authenticate('jwt', {session: false}), authRole, deleteAuthor)
 authorsRouter.get('/active', passport.authenticate('jwt', {session: false}), onlyAdmin, active )
 authorsRouter.put("/updateActive", passport.authenticate('jwt', {session: false}), onlyAdmin, updateActive)
