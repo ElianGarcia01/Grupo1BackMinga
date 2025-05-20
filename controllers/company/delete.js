@@ -1,5 +1,6 @@
 import Company from "../../models/Company.js";
 import User from "../../models/User.js";
+import jwt from 'jsonwebtoken'
 
 let deleteCompany = async (req, res, next) => {
     try {
@@ -12,14 +13,20 @@ let deleteCompany = async (req, res, next) => {
                 message: "Company not found",
             });
         }
-
-        await Company.findByIdAndDelete(companyId);
-
         await User.findByIdAndUpdate(company.user_id, { role: 0 });
-
+        const updatedUser = await User.findById(company.user_id)
+        const token = jwt.sign({
+                email: updatedUser.email,
+                photo: updatedUser.photo,
+                role: updatedUser.role
+            },
+            process.env.ENCRYPTION,
+            {expiresIn: "4h"})
+        await Company.findByIdAndDelete(companyId);
         return res.status(200).json({
             success: true,
             message: "Company deleted and user role updated to reader (0)",
+            token: token
         });
 
     } catch (error) {
