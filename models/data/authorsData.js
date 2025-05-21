@@ -20,17 +20,27 @@ let authors = [
 ]
 
 let insert_authors = async () => {
-    try {
-        for(let author of authors){
-            let user = User.findOneAndUpdate({ email: company.user_id }, { role: 1 })
-            author.user_id = await user._id
-            let insert = await Author.create(author)
-            console.log(insert.name);
+    for (let author of authors) {
+        console.log(`Procesando autor con email: ${author.user_id}`)
+        
+        let user = await User.findOneAndUpdate(
+            { email: author.user_id },
+            { role: 1 },
+            { new: true }
+        )
+        
+        if (!user) {
+            console.log(`Usuario con email ${author.user_id} no encontrado.`)
         }
-        process.exit(0)
-    } catch (error) {
-        console.log(error);
-        process.exit(1)
+
+        author.user_id = user._id
+
+        try {
+            let insert = await Author.create(author)
+            console.log(`Autor insertado: ${insert.name}`)
+        } catch (error) {
+            console.log(`Error insertando autor ${author.name}:`, error.message)
+        }
     }
 }
 

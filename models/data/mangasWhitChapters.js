@@ -847,7 +847,7 @@ let mangas = [
   },    
   {
         title: "Crimson Sky Protocol",
-        cover_photo: "https://i.postimg.cc/NfJdCZ6g/fakecover1.jpg",
+        cover_photo: "https://i.postimg.cc/tgTC5FZK/secret-invasion-001-01.jpg",
         description: "When satellites fall and the sky bleeds red, only the rogue pilot squad can uncover the truth.",
         category_id: "Seinen",
         company_id: "EchoVerse Publishing",
@@ -893,7 +893,7 @@ let mangas = [
   },
   {
         title: "Sakura Circuit",
-        cover_photo: "https://i.postimg.cc/zXqkzqbG/fakecover2.jpg",
+        cover_photo: "https://i.postimg.cc/Dynh61Rx/secret-invasion-001-22.jpg",
         description: "In a neon Tokyo, underground racing meets teenage dreams and family legacies.",
         category_id: "Shoen",
         company_id: "Quantum Strike Comics",
@@ -939,7 +939,7 @@ let mangas = [
   },
   {
         title: "Ghost Byte",
-        cover_photo: "https://i.postimg.cc/02PZxn8P/fakecover3.jpg",
+        cover_photo: "https://i.postimg.cc/FK8v5M8F/world-war-hulk-001-20.jpg",
         description: "A teenage hacker accidentally downloads a spirit from the web—now the ghost wants revenge.",
         category_id: "Komodo",
         company_id: "Oblivion Ink",
@@ -969,7 +969,7 @@ let mangas = [
   },
   {
         title: "Echoes of Astra",
-        cover_photo: "https://i.postimg.cc/WzDKTHT2/fakecover4.jpg",
+        cover_photo: "https://i.postimg.cc/QCnw11D8/world-war-hulk-005-02.jpg",
         description: "The last human colony sends a desperate message through time. Will anyone answer?",
         category_id: "Seinen",
         company_id: "Solar Syndicate",
@@ -999,7 +999,7 @@ let mangas = [
   },
   {
         title: "Velvet Reign",
-        cover_photo: "https://i.postimg.cc/gJXrk9k9/fakecover5.jpg",
+        cover_photo: "https://i.postimg.cc/768d6kkK/secret-invasion-001-34.jpg",
         description: "In a city ruled by aesthetics and silence, one girl dares to sing.",
         category_id: "Shojo",
         company_id: "Phantom Realm Studios",
@@ -1045,7 +1045,7 @@ let mangas = [
   },
   {
         title: "GearBound",
-        cover_photo: "https://i.postimg.cc/63M0TL5t/fakecover6.jpg",
+        cover_photo: "https://i.postimg.cc/fWpj1B8z/flashpoint-002-11.jpg','https://i.postimg.cc/dtCmFrf8/flashpoint-002-12.jpg",
         description: "Cursed with a mechanical arm that remembers battles he’s never fought, Aki searches for the truth.",
         category_id: "Shoen",
         company_id: "ThunderPage Comics",
@@ -1075,7 +1075,7 @@ let mangas = [
   },
   {
         title: "Bloomthief",
-        cover_photo: "https://i.postimg.cc/vZcxh2X0/fakecover7.jpg",
+        cover_photo: "https://www.21-draw.com/wp-content/uploads/2022/12/shonen-manga.jpg",
         description: "In a world where flowers hold magic, a thief steals the wrong blossom.",
         category_id: "Komodo",
         company_id: "Phantom Realm Studios",
@@ -1125,7 +1125,7 @@ let mangas = [
   },
   {
         title: "Neon Exile",
-        cover_photo: "https://i.postimg.cc/1X6dP63f/fakecover8.jpg",
+        cover_photo: "https://i.postimg.cc/63ZmKWQ5/gantz-001-01.jpg",
         description: "Exiled from the glowing towers of Neo-Central, a cyber mercenary finds purpose in the shadows.",
         category_id: "Seinen",
         company_id: "ThunderPage Comics",
@@ -1175,7 +1175,7 @@ let mangas = [
   },
   {
         title: "Mirrorlight Chronicles",
-        cover_photo: "https://i.postimg.cc/fR6C8gBL/fakecover9.jpg",
+        cover_photo: "https://i.postimg.cc/fRZtjBdH/another-001-01.jpg",
         description: "A girl trapped between two realities discovers her reflection has its own agenda.",
         category_id: "Shojo",
         company_id: "Blue Nebula Press",
@@ -1225,7 +1225,7 @@ let mangas = [
   },
   {
         title: "Zero Ember",
-        cover_photo: "https://i.postimg.cc/hv4MpDM3/fakecover10.jpg",
+        cover_photo: "https://i.pinimg.com/236x/59/17/73/591773e9b132946e894acc2e4e13823e.jpg",
         description: "In a world where fire grants power, a boy born with ice must rewrite the laws of his clan.",
         category_id: "Shoen",
         company_id: "ThunderPage Comics",
@@ -1275,7 +1275,7 @@ let mangas = [
   },
   {
         title: "TechnoNymph",
-        cover_photo: "https://i.postimg.cc/qvMpj9vT/fakecover11.jpg",
+        cover_photo: "https://i.pinimg.com/736x/68/90/ab/6890ab74f66655ca7d7d8fe9419f428f.jpg",
         description: "An AI fairy awakens inside a corrupted game engine and learns what it means to be real.",
         category_id: "Komodo",
         company_id: "Mythos Universe",
@@ -1309,7 +1309,7 @@ let mangas = [
   },
   {
         title: "Dreamhollow",
-        cover_photo: "https://i.postimg.cc/LXc5nQxd/fakecover12.jpg",
+        cover_photo: "https://www.picgifs.com/graphics/m/manga/graphics-manga-430221.jpg",
         description: "Two souls meet only in dreams and piece together a murder from separate realities.",
         category_id: "Shojo",
         company_id: "Crimson Comics",
@@ -1339,7 +1339,7 @@ let mangas = [
   },
   {
         title: "Iron Pulse: Warden Zero",
-        cover_photo: "https://i.postimg.cc/sXT5Nnd1/fakecover13.jpg",
+        cover_photo: "https://d1lss44hh2trtw.cloudfront.net/assets/article/2023/11/28/destiny-2-update-730-patch-notes-kick-off-the-season-of-the-wish_feature.jpg",
         description: "A vigilante in a collapsing city uncovers his forgotten origins through stolen tech.",
         category_id: "Seinen",
         company_id: "Blue Nebula Press",
@@ -1381,7 +1381,7 @@ let mangas = [
   },
   {
         title: "Bubblegun Opera",
-        cover_photo: "https://i.postimg.cc/KzWnxZ0n/fakecover14.jpg",
+        cover_photo: "https://img.freepik.com/photos-premium/anime-manga-girl_987615-6.jpg",
         description: "Singers duel with sonic weapons in a war where harmony could end the world.",
         category_id: "Shoen",
         company_id: "ShadowFrame Comics",
