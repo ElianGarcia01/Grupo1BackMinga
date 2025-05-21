@@ -14,7 +14,7 @@ let deleteAuthor = async (req, res, next) => {
             });
         }
         await User.findByIdAndUpdate(author.user_id, { role: 0 });
-        const updatedUser = await User.findById(company.user_id)
+        const updatedUser = await User.findById(author.user_id)
         const token = jwt.sign({
                 email: updatedUser.email,
                 photo: updatedUser.photo,
