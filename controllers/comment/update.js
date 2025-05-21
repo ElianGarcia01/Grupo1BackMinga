@@ -5,7 +5,7 @@ let update = async (req,res,next) => {
         let commentInfo = req.body
         console.log(commentInfo)
         let updateComment = await Comment.updateOne(
-            {chapter_id: commentInfo._id,},
+            {_id: commentInfo._id,},
             {message: commentInfo.message} 
         )
         return res.status(200).json({
